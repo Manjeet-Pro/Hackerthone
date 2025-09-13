@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="unnamed.jpg" height="50px"  width="80px" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="index.html">Home </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="cont.html">Contact us </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="about.html">About us </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <hr>
+   <h1>HTML MEDIA</h1>
+    <nav>
+      <a href="index.html">Lecture 1</a> 
+      <a href="lecture2.html">Lecture 2</a> 
+      <a href="lecture3.html">Lecture 3</a> 
+      <a href="lecture4.html">Lecture 4</a> 
+      <a href="lecture5.html">Lecture 5</a> 
+      <a href="lecture6.html">Lecture 6</a>
+    </nav>
+  <h2>First Principle: The Web is More Than Text and Images</h2>
+  <p>
+    A webpage should deliver any kind of content, not just static text and images. 
+    Earlier, browsers needed plugins like Flash, QuickTime, or Silverlight for video/audio, 
+    which was inefficient and insecure.
+  </p>
+
+  <h2>The Core Problem</h2>
+  <p>
+    How to embed video/audio natively, in a standardized way, without plugins? 
+    We need a universal system across browsers and devices.
+  </p>
+
+  <h2>The Logical Solution: The HTML5 &lt;video&gt; and &lt;audio&gt; Tags</h2>
+  <p>Dedicated tags to embed and control media.</p>
+
+  <hr>
+
+  <h2>Part 1: Basics - Getting a Video on the Page</h2>
+  <pre><code>&lt;video src="my-awesome-video.mp4"&gt;&lt;/video&gt;</code></pre>
+
+  <p>
+    Problem: Without <code>controls</code>, it only shows a frame, not a player.  
+    Solution: Add <code>controls</code> attribute.
+  </p>
+  <pre><code>&lt;video src="my-awesome-video.mp4" controls&gt;&lt;/video&gt;</code></pre>
+
+  <hr>
+
+  <h2>Part 2: Intermediate - Control with Attributes</h2>
+  <ul>
+    <li><b>width & height:</b> Set player size.</li>
+  </ul>
+  <pre><code>&lt;video src="video.mp4" width="640" height="360" controls&gt;&lt;/video&gt;</code></pre>
+
+  <ul>
+    <li><b>autoplay:</b> Starts automatically (often needs <code>muted</code>).</li>
+  </ul>
+  <pre><code>&lt;video src="video.mp4" autoplay muted controls&gt;&lt;/video&gt;</code></pre>
+
+  <ul>
+    <li><b>loop:</b> Repeats automatically.</li>
+    <li><b>poster:</b> Thumbnail image.</li>
+  </ul>
+  <pre><code>&lt;video src="video.mp4" poster="images/video-thumbnail.jpg" controls&gt;&lt;/video&gt;</code></pre>
+
+  <hr>
+
+  <h2>Part 3: The &lt;audio&gt; Tag</h2>
+  <p>Works like video but only for sound.</p>
+  <pre><code>&lt;p&gt;Listen:&lt;/p&gt;
+&lt;audio src="audio/theme-song.mp3" controls&gt;&lt;/audio&gt;</code></pre>
+
+  <hr>
+
+  <h2>Part 4: Advanced & Professional</h2>
+  <h3>Problem #1: Format Support</h3>
+  <p>Different browsers support different formats. Use multiple &lt;source&gt;.</p>
+  <pre><code>&lt;video controls poster="images/thumbnail.jpg"&gt;
+  &lt;source src="videos/my-video.webm" type="video/webm"&gt;
+  &lt;source src="videos/my-video.mp4" type="video/mp4"&gt;
+  Sorry, your browser doesn't support embedded videos.
+&lt;/video&gt;</code></pre>
+
+  <h3>Problem #2: Accessibility</h3>
+  <p>Use &lt;track&gt; for subtitles/captions.</p>
+  <pre><code>&lt;video controls&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+
+  &lt;track src="captions_en.vtt" kind="captions" srclang="en" label="English"&gt;
+  &lt;track src="subtitles_es.vtt" kind="subtitles" srclang="es" label="Español"&gt;
+&lt;/video&gt;</code></pre>
+
+  <hr>
+
+  <h2>Two Embedding Methods</h2>
+
+  <h3>Example 1: Robust (using &lt;source&gt;)</h3>
+  <pre><code>&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  &lt;source src="movie.ogg" type="video/ogg"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+
+  <h3>Example 2: Simple (using src)</h3>
+  <pre><code>&lt;video src="a.mp4" controls&gt;&lt;/video&gt;</code></pre>
+
+  <h3>Comparison Table</h3>
+  <table border="1" cellpadding="5">
+    <tr>
+      <th>Feature</th>
+      <th>Example 1 (&lt;source&gt;)</th>
+      <th>Example 2 (src)</th>
+    </tr>
+    <tr>
+      <td>Compatibility</td>
+      <td>Excellent (multiple formats)</td>
+      <td>Good but not guaranteed</td>
+    </tr>
+    <tr>
+      <td>Flexibility</td>
+      <td>High</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>Simplicity</td>
+      <td>More complex</td>
+      <td>Very simple</td>
+    </tr>
+    <tr>
+      <td>Fallback</td>
+      <td>Excellent</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Best Use</td>
+      <td>Public websites</td>
+      <td>Quick/internal projects</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h2>Special Character Entities</h2>
+  <h3>Copyright Symbol</h3>
+  <pre><code>&lt;footer&gt;
+  &lt;p&gt;Copyright &amp;copy; 2024 My Awesome Website. All Rights Reserved.&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+
+  <h3>Entity Table</h3>
+  <table border="1" cellpadding="5">
+    <tr>
+      <th>Symbol</th><th>Description</th><th>Entity Name</th><th>Entity Number</th>
+    </tr>
+    <tr><td>©</td><td>Copyright</td><td>&amp;copy;</td><td>&amp;#169;</td></tr>
+    <tr><td>®</td><td>Registered Trademark</td><td>&amp;reg;</td><td>&amp;#174;</td></tr>
+    <tr><td>™</td><td>Trademark</td><td>&amp;trade;</td><td>&amp;#8482;</td></tr>
+    <tr><td>&lt;</td><td>Less-than</td><td>&amp;lt;</td><td>&amp;#60;</td></tr>
+    <tr><td>&gt;</td><td>Greater-than</td><td>&amp;gt;</td><td>&amp;#62;</td></tr>
+    <tr><td>&amp;</td><td>Ampersand</td><td>&amp;amp;</td><td>&amp;#38;</td></tr>
+    <tr><td>"</td><td>Double Quote</td><td>&amp;quot;</td><td>&amp;#34;</td></tr>
+    <tr><td>€</td><td>Euro</td><td>&amp;euro;</td><td>&amp;#8364;</td></tr>
+  </table>
+
+
+  <footer>
+    <hr>
+    <p>&copy; 2025 Nexus by coderarmy</p>
+  </footer>
+</body>
+</html>

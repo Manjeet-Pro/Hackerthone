@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="unnamed.jpg" height="50px"  width="80px" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="index.html">Home </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="cont.html">Contact us </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="about.html">About us </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <hr>
+  <header>
+    <h1>HTML Day03: File Path System</h1>
+   <nav>
+      <a href="index.html">Lecture 1</a> 
+      <a href="lecture2.html">Lecture 2</a> 
+      <a href="lecture3.html">Lecture 3</a> 
+      <a href="lecture4.html">Lecture 4</a> 
+      <a href="lecture5.html">Lecture 5</a> 
+      <a href="lecture6.html">Lecture 6</a>
+    </nav>
+    <hr />
+  </header>
+
+  <main>
+    <section>
+      <h2>Step 1: The First Principle (The Fundamental Truth)</h2>
+      <p>A website is not a single file. It consists of multiple files such as HTML, CSS, JavaScript, images, videos, and fonts.</p>
+      <p>These files are organized into folders, similar to how documents are organized on your computer.</p>
+    </section>
+
+    <section>
+      <h2>Step 2: The Core Problem</h2>
+      <p>If your <code>index.html</code> needs to display an image <code>logo.png</code>, how does the HTML file tell the browser where to find it?</p>
+      <p>You cannot just write <code>src="logo.png"</code> because the image might be inside a folder or somewhere else.</p>
+      <p>The browser needs a precise file path (address) to locate the file correctly.</p>
+    </section>
+
+    <section>
+      <h3>A) Relative File Paths (Most Important)</h3>
+      <p>Relative file paths are specified relative to the current file location.</p>
+
+      <pre>
+my-website/
+├── index.html
+├── about.html
+│
+├── images/
+│   ├── logo.png
+│   └── hero.jpg
+│
+└── pages/
+    ├── contact.html
+    └── terms.html
+      </pre>
+
+      <h4>Scenario 1: Linking to a file in the SAME folder</h4>
+      <p>You are in <code>index.html</code> and want to link to <code>about.html</code>. They are in the same folder.</p>
+      <pre>
+<!-- Inside index.html -->
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+      </pre>
+
+      <h4>Scenario 2: Linking to a file in a SUB-FOLDER</h4>
+      <p>You want to display <code>logo.png</code> inside the images folder from <code>index.html</code>.</p>
+      <pre>
+<!-- Inside index.html -->
+&lt;img src="images/logo.png" alt="My Website Logo"&gt;
+      </pre>
+
+      <h4>Scenario 3: Linking to a file in a PARENT FOLDER</h4>
+      <p>You are in <code>contact.html</code> inside <code>pages/</code>, want to display <code>logo.png</code> inside the <code>images/</code>.</p>
+      <pre>
+<!-- Inside pages/contact.html -->
+&lt;img src="../images/logo.png" alt="My Website Logo"&gt;
+      </pre>
+      <p><code>../</code> means "go up one folder".</p>
+    </section>
+
+    <section>
+      <h3>B) Absolute File Paths</h3>
+      <p>Absolute paths specify the full URL to a resource on the web.</p>
+      <p>Used only for linking external files (e.g., fonts, images hosted elsewhere).</p>
+      <pre>
+&lt;a href="https://www.google.com"&gt;Search on Google&lt;/a&gt;
+
+&lt;img src="https://example.com/images/logo.png" alt="Logo"&gt;
+      </pre>
+    </section>
+
+    <section>
+      <h3>Why Not Use Absolute Paths for Your Own Files?</h3>
+      <p>Absolute paths like <code>C:/Users/Arjun/Desktop/my-website/images/logo.png</code> only work on your computer and break on web hosting servers.</p>
+      <p>Browsers restrict direct access to local files for security reasons.</p>
+      <p>Use relative paths so your website works on any computer or server.</p>
+    </section>
+
+    <section>
+      <h3>Summary of Key Path Rules</h3>
+      <ul>
+        <li>Use relative paths for your own website files (images, CSS, other pages).</li>
+        <li>Use absolute paths only for external resources.</li>
+        <li><code>filename.html</code> - same folder</li>
+        <li><code>folder/filename.html</code> - subfolder</li>
+        <li><code>../filename.html</code> - parent folder</li>
+        <li><code>https://example.com/filename.html</code> - external absolute URL</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>HTML Boilerplate Code Example</h2>
+      <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- Your content goes here --&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+      </pre>
+      <p>This is the required HTML setup to ensure proper rendering and compatibility.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; 2025 Nexus by coderarmy</p>
+  </footer>
+
+</body>
+</html>

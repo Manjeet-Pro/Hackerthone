@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="unnamed.jpg" height="50px"  width="80px" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="index.html">Home </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="cont.html">Contact us </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="about.html">About us </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <hr>
+  <header>
+    <h1>HTML Nested Lists & Tables: The Complete Guide</h1>
+    <nav>
+      <a href="index.html">Lecture 1</a> 
+      <a href="lecture2.html">Lecture 2</a> 
+      <a href="lecture3.html">Lecture 3</a> 
+      <a href="lecture4.html">Lecture 4</a> 
+      <a href="lecture5.html">Lecture 5</a> 
+      <a href="lecture6.html">Lecture 6</a>
+    </nav>
+    <hr>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Nested Unordered Lists</h2>
+      <p>A nested unordered list is a list within a list using <code>&lt;ul&gt;</code> inside <code>&lt;li&gt;</code>.</p>
+      <ul>
+        <li>Fruits
+          <ul>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Orange</li>
+          </ul>
+        </li>
+        <li>Vegetables
+          <ul>
+            <li>Carrot</li>
+            <li>Broccoli</li>
+            <li>Spinach</li>
+          </ul>
+        </li>
+        <li>Dairy</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Nested Ordered Lists</h2>
+      <p>A nested ordered list is a numbered list inside a numbered list using <code>&lt;ol&gt;</code> inside <code>&lt;li&gt;</code>.</p>
+      <ol>
+        <li>Prepare ingredients
+          <ol>
+            <li>Wash vegetables</li>
+            <li>Cut fruits</li>
+          </ol>
+        </li>
+        <li>Cook food
+          <ol>
+            <li>Boil water</li>
+            <li>Saute vegetables</li>
+          </ol>
+        </li>
+        <li>Serve meal</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>3. Mixed Nested Lists</h2>
+      <p>You can mix ordered lists inside unordered lists and vice versa.</p>
+      <ul>
+        <li>Steps to Bake a Cake
+          <ol>
+            <li>Preheat oven</li>
+            <li>Mix ingredients</li>
+            <li>Bake for 30 minutes</li>
+          </ol>
+        </li>
+        <li>Decoration</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>4. Basic HTML Table</h2>
+      <p>A simple table with headers and rows:</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Priya</td>
+            <td>Sharma</td>
+            <td>24</td>
+          </tr>
+          <tr>
+            <td>Arun</td>
+            <td>Singh</td>
+            <td>32</td>
+          </tr>
+          <tr>
+            <td>Sam</td>
+            <td>Watson</td>
+            <td>41</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>5. Table with Nested Table</h2>
+      <p>You can add a table inside a table cell to represent complex data.</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Person</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>
+              <table border="1" cellpadding="3" cellspacing="0">
+                <tr>
+                  <th>Skill</th>
+                  <th>Level</th>
+                </tr>
+                <tr>
+                  <td>HTML</td>
+                  <td>Expert</td>
+                </tr>
+                <tr>
+                  <td>CSS</td>
+                  <td>Intermediate</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>
+              <table border="1" cellpadding="3" cellspacing="0">
+                <tr>
+                  <th>Skill</th>
+                  <th>Level</th>
+                </tr>
+                <tr>
+                  <td>JavaScript</td>
+                  <td>Advanced</td>
+                </tr>
+                <tr>
+                  <td>React</td>
+                  <td>Intermediate</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; 2025 Nexus by coderarmy</p>
+  </footer>
+</body>
+</html>

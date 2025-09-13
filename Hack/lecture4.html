@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="unnamed.jpg" height="50px"  width="80px" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="index.html">Home </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="cont.html">Contact us </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="about.html">About us </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <hr>
+  <header>
+  <h1>HTML Forms: Complete Guide</h1>
+  <nav>
+      <a href="index.html">Lecture 1</a> 
+      <a href="lecture2.html">Lecture 2</a> 
+      <a href="lecture3.html">Lecture 3</a> 
+      <a href="lecture4.html">Lecture 4</a> 
+      <a href="lecture5.html">Lecture 5</a> 
+      <a href="lecture6.html">Lecture 6</a>
+    </nav>
+  <hr />
+</header>
+
+<main>
+
+  <h1>Forms in HTML</h1>
+
+  <h2>The First Principle: The Web Needs to Be a Two-Way Street</h2>
+  <p>
+    The fundamental truth is that a website isn't just a brochure for you to read.
+    For the web to be useful, it needs a way to <strong>collect information from the user</strong>
+    and send it back to the server.
+  </p>
+
+  <h3>The Core Problem</h3>
+  <ol>
+    <li><strong>Display</strong> interactive fields for a user to fill in (text boxes, checkboxes, dropdowns).</li>
+    <li><strong>Package</strong> the user's data neatly.</li>
+    <li><strong>Send</strong> that package to a specific destination on a server.</li>
+    <li><strong>Tell</strong> the server <em>how</em> the data is being sent.</li>
+  </ol>
+  <p>The logical solution to this entire problem is the HTML <strong>&lt;form&gt;</strong>.</p>
+
+  <h2>The &lt;input&gt; Element</h2>
+  <p>The most common form tag. Example:</p>
+  <pre>
+&lt;form&gt;
+    &lt;input type="text"&gt;
+&lt;/form&gt;
+  </pre>
+
+  <h2>The &lt;label&gt; Tag</h2>
+  <p>Labels give meaning to input fields.</p>
+  <pre>
+&lt;label&gt;First Name:&lt;/label&gt;
+&lt;input type="text"&gt;
+  </pre>
+
+  <h3>Connection with id and for</h3>
+  <pre>
+&lt;label for="firstName"&gt;First Name:&lt;/label&gt;
+&lt;input type="text" id="firstName"&gt;
+  </pre>
+
+  <h2>The &lt;form&gt; and Submit</h2>
+  <pre>
+&lt;form&gt;
+  &lt;label for="firstName"&gt;First Name:&lt;/label&gt;
+  &lt;input type="text" id="firstName"&gt;
+
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;label for="lastName"&gt;Last Name:&lt;/label&gt;
+  &lt;input type="text" id="lastName"&gt;
+
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+  </pre>
+
+  <h2>The name Attribute</h2>
+  <pre>
+&lt;input type="text" id="firstName" name="firstName"&gt;
+  </pre>
+
+  <h2>Radio Buttons (Select One)</h2>
+  <pre>
+&lt;input type="radio" id="sizeS" name="shirtSize" value="small"&gt;
+&lt;label for="sizeS"&gt;Small&lt;/label&gt;
+
+&lt;input type="radio" id="sizeM" name="shirtSize" value="medium"&gt;
+&lt;label for="sizeM"&gt;Medium&lt;/label&gt;
+  </pre>
+
+  <h2>Checkboxes (Select Many)</h2>
+  <pre>
+&lt;input type="checkbox" id="toppingPep" name="toppings" value="pepperoni"&gt;
+&lt;label for="toppingPep"&gt;Pepperoni&lt;/label&gt;
+
+&lt;input type="checkbox" id="toppingMush" name="toppings" value="mushrooms"&gt;
+&lt;label for="toppingMush"&gt;Mushrooms&lt;/label&gt;
+  </pre>
+
+  <h2>The &lt;button&gt; Element</h2>
+  <pre>
+&lt;button type="submit"&gt;
+  &lt;strong&gt;Submit&lt;/strong&gt; Your Order
+&lt;/button&gt;
+  </pre>
+
+  <h2>&lt;textarea&gt; for Long Text</h2>
+  <pre>
+&lt;label for="comments"&gt;Any special instructions?&lt;/label&gt;
+&lt;textarea id="comments" name="comments" rows="4" cols="50"&gt;&lt;/textarea&gt;
+  </pre>
+
+  <h2>&lt;select&gt; Dropdown</h2>
+  <pre>
+&lt;label for="country"&gt;Country:&lt;/label&gt;
+&lt;select id="country" name="country"&gt;
+  &lt;option value=""&gt;--Please choose an option--&lt;/option&gt;
+  &lt;option value="in"&gt;India&lt;/option&gt;
+  &lt;option value="us"&gt;USA&lt;/option&gt;
+&lt;/select&gt;
+  </pre>
+
+  <h2>HTML5 Specialized Inputs</h2>
+  <pre>
+&lt;input type="password" id="userPass" name="userPassword"&gt;
+&lt;input type="number" id="userAge" name="age" min="18" max="99"&gt;
+&lt;input type="date" id="birthDate" name="dob"&gt;
+&lt;input type="color"&gt;
+&lt;input type="range"&gt;
+&lt;input type="file"&gt;
+  </pre>
+  <section>
+    <h2>The Basic Form Structure</h2>
+
+    <form action="#" method="POST">
+      <!-- First Name -->
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" />
+      <br><br>
+
+      <!-- Last Name -->
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" />
+      <br><br>
+
+      <!-- T-Shirt Size (Radio Buttons) -->
+      <fieldset>
+        <legend>T-Shirt Size:</legend>
+
+        <input type="radio" id="sizeS" name="shirtSize" value="small" />
+        <label for="sizeS">Small</label><br />
+
+        <input type="radio" id="sizeM" name="shirtSize" value="medium" />
+        <label for="sizeM">Medium</label><br />
+
+        <input type="radio" id="sizeL" name="shirtSize" value="large" />
+        <label for="sizeL">Large</label><br />
+      </fieldset>
+      <br>
+
+      <!-- Pizza Toppings (Checkboxes) -->
+      <fieldset>
+        <legend>Pizza Toppings:</legend>
+
+        <input type="checkbox" id="toppingPep" name="toppings" value="pepperoni" />
+        <label for="toppingPep">Pepperoni</label><br />
+
+        <input type="checkbox" id="toppingMush" name="toppings" value="mushrooms" />
+        <label for="toppingMush">Mushrooms</label><br />
+
+        <input type="checkbox" id="toppingOni" name="toppings" value="onions" />
+        <label for="toppingOni">Onions</label><br />
+      </fieldset>
+      <br>
+
+      <!-- Comments (Textarea) -->
+      <label for="comments">Any special instructions?</label><br />
+      <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+      <br><br>
+
+      <!-- Country (Dropdown Select) -->
+      <label for="country">Country:</label><br />
+      <select id="country" name="country">
+        <option value="">--Please choose an option--</option>
+        <option value="in">India</option>
+        <option value="us">USA</option>
+        <option value="uk">United Kingdom</option>
+        <option value="au">Australia</option>
+      </select>
+      <br><br>
+
+      <!-- Password -->
+      <label for="userPass">Password:</label><br />
+      <input type="password" id="userPass" name="userPassword" />
+      <br><br>
+
+      <!-- Age (Number) -->
+      <label for="userAge">Age (18-99):</label><br />
+      <input type="number" id="userAge" name="age" min="18" max="99" />
+      <br><br>
+
+      <!-- Date of Birth -->
+      <label for="birthDate">Date of Birth:</label><br />
+      <input type="date" id="birthDate" name="dob" />
+      <br><br>
+
+      <!-- Submit Button -->
+      <button type="submit"><strong>Submit</strong> Your Form</button>
+
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <hr>
+    <p>&copy; 2025 Nexus by coderarmy</p>
+  </footer>
+</body>
+</html>
